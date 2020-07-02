@@ -1,0 +1,21 @@
+PROMPT 10
+MENU TITLE OCP4.3 installation
+UI menu.c32
+TIMEOUT 300
+
+LABEL local
+  MENU LABEL Boot from local drive
+  MENU DEFAULT
+  localboot 0
+
+LABEL pxeboot - bootstrap
+    KERNEL rhcos-4.4.3-x86_64-installer-kernel-x86_64
+    APPEND ip=dhcp rd.neednet=1 initrd=rhcos-4.4.3-x86_64-installer-initramfs.x86_64.img console=tty0 console=ttyS0 coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://192.168.1.210:8080/okd4/rhcos-4.4.3-x86_64-metal.x86_64.raw.gz coreos.inst.ignition_url=http://192.168.1.210:8080/okd4/bootstrap.ign
+
+LABEL pxeboot - controlpanel
+    KERNEL rhcos-4.4.3-x86_64-installer-kernel-x86_64
+    APPEND ip=dhcp rd.neednet=1 initrd=rhcos-4.4.3-x86_64-installer-initramfs.x86_64.img console=tty0 console=ttyS0 coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://192.168.1.210:8080/okd4/rhcos-4.4.3-x86_64-metal.x86_64.raw.gz coreos.inst.ignition_url=http://192.168.1.210:8080/okd4/master.ign
+
+LABEL pxeboot - worker
+    KERNEL rhcos-4.4.3-x86_64-installer-kernel-x86_64
+    APPEND ip=dhcp rd.neednet=1 initrd=rhcos-4.4.3-x86_64-installer-initramfs.x86_64.img console=tty0 console=ttyS0 coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://192.168.1.210:8080/okd4/rhcos-4.4.3-x86_64-metal.x86_64.raw.gz coreos.inst.ignition_url=http://192.168.1.210:8080/okd4/worker.ign
