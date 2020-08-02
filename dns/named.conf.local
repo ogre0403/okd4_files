@@ -1,9 +1,9 @@
-zone "okd.local" {
+zone "twcc.ai" {
     type master;
-    file "/etc/named/zones/db.okd.local"; # zone file path
+    file "/etc/named/zones/db.twcc.ai"; # zone file path
 };
 
-zone "1.168.192.in-addr.arpa" {
+zone "14.22.172.in-addr.arpa" {
     type master;
-    file "/etc/named/zones/db.192.168.1";  # 192.168.1.0/24 subnet
+    file "/etc/named/zones/db.172.22.14";  # 172.22.14.0/22 subnet
 };

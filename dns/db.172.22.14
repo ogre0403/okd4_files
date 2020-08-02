@@ -1,0 +1,24 @@
+$TTL    604800
+@       IN      SOA     service.twcc.ai. admin.twcc.ai. (
+                  6     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800     ; Negative Cache TTL
+)
+
+; name servers - NS records
+    IN      NS      service.twcc.ai.
+
+; name servers - PTR records
+12      IN    PTR    service.twcc.ai.
+
+; OpenShift Container Platform Cluster - PTR records
+10      IN    PTR    bootstrap.gpu.twcc.ai.
+13      IN    PTR    master-01.gpu.twcc.ai.
+14      IN    PTR    master-02.gpu.twcc.ai.
+15      IN    PTR    master-03.gpu.twcc.ai.
+8       IN    PTR    gpu-worker-01.gpu.twcc.ai.
+9       IN    PTR    gpu-worker-02.gpu.twcc.ai.
+12      IN    PTR    api.gpu.twcc.ai.
+12      IN    PTR    api-int.gpu.twcc.ai.
