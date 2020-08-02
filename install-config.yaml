@@ -1,7 +1,7 @@
 apiVersion: v1
-baseDomain: okd.local
+baseDomain: twcc.ai
 metadata:
-  name: lab
+  name: gpu
 
 compute:
 - hyperthreading: Enabled
